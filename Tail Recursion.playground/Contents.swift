@@ -9,7 +9,7 @@ Copyright: IDC (I don't care)
 /*:
  # Using Tail Recursions — And Why
  
- In computing history the method of using recursive functions to solve certain types of problems has a long tradition. One of the most cited use of recursions in computer sience seems to be the [Ackermann function](https://en.wikipedia.org/wiki/Ackermann_function). But any other function like the factorial function or the [Fibonacci number](https://en.wikipedia.org/wiki/Fibonacci_number). This playground demonstrates — yet again — the beauty of Swift for one type of implementation.
+ In computing history the method of using recursive functions to solve certain types of problems has a long tradition. One of the most cited use of recursions in computer sience seems to be the [Ackermann function](https://en.wikipedia.org/wiki/Ackermann_function). But any other function like the factorial function or the [Fibonacci number](https://en.wikipedia.org/wiki/Fibonacci_number) are good and well known examples of recursive functions. This playground demonstrates — yet again — the beauty of Swift for one type of implementation.
  
  # Understanding tail recursions
  A "classic" recursion on a computer system will use what's called a [stack](https://en.wikipedia.org/wiki/Stack_(abstract_data_type)) to push the previous iteration of the complete function onto a pile (a memory location in your computer). This type of recursion then has to be [unwound](https://en.wikipedia.org/wiki/Call_stack#Unwinding) when the recursion hits its last iteration. Now, a stack cannot be physically infinit, they are limited by the operating system, the runtime environment and the programming language you are using. It is safe to say that for educational numbers of iterations almost any computer system will execute a recursive algorithm just fine withour running out of memory and throwing nasty error messages at you. But if things get more enthusiastic this might not hold true. Also, using a stack can pose a quite big impact on the performance, and even security, of a computer system (see [stack overflow](https://en.wikipedia.org/wiki/Stack_overflow)). Visualizing a recursion using a call stack for a given function
@@ -66,9 +66,9 @@ factorial(4) // results in 24
  */
 func fibonacci(_ n: Int, _ t: (a: Int, b: Int) = (0, 1)) -> Int {
     switch n {
-    case 0: return t.a
-    case 1: return t.b
-    default: return fibonacci(n - 1, (t.b, t.a + t.b))
+        case 0: return t.a
+        case 1: return t.b
+        default: return fibonacci(n - 1, (t.b, t.a + t.b))
     }
 }
 
